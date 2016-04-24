@@ -74,6 +74,13 @@ const config = {
         },
       },
       {
+        test: /\.css$/,
+        loaders: [
+          'isomorphic-style-loader',
+          `css-loader?${DEBUG ? 'sourceMap&' : 'minimize&'}modules&localIdentName=[local]`
+        ]
+      },
+      {
         test: /\.scss$/,
         loaders: [
           'isomorphic-style-loader',
